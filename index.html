@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LocalLift - Local Business Marketing</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#f7f8fc;color:#182238;line-height:1.6}
+header{background:#102447;color:white;padding:18px 7%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.logo{font-size:25px;font-weight:bold;color:#65e0b0}
+nav a{color:white;text-decoration:none;margin-left:15px;font-size:14px}
+.hero{padding:65px 7%;background:linear-gradient(130deg,#102447,#176b81);color:white}
+.hero h1{font-size:38px;line-height:1.2;max-width:650px;margin:15px 0}
+.hero p{max-width:580px;margin-bottom:25px;color:#e0edf6}
+.btn{display:inline-block;background:#65e0b0;color:#102447;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:bold}
+section{padding:45px 7%}
+h2{text-align:center;font-size:28px;margin-bottom:10px}
+.sub{text-align:center;color:#69758a;margin-bottom:28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{background:white;padding:23px;border-radius:14px;box-shadow:0 5px 20px #10244712}
+.card .emoji{font-size:32px}
+.card h3{margin:10px 0}
+.card p{color:#68758a;font-size:14px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:15px;text-align:center}
+.stat{background:#e8f8f2;padding:22px;border-radius:12px}
+.stat strong{display:block;font-size:27px;color:#087f65}
+form{max-width:520px;margin:auto;background:white;padding:22px;border-radius:14px;box-shadow:0 5px 20px #10244712}
+input,select,textarea{width:100%;padding:12px;margin:8px 0 14px;border:1px solid #d7deea;border-radius:7px;font:inherit}
+button{background:#102447;color:white;padding:13px 20px;border:0;border-radius:7px;width:100%;font-size:16px}
+footer{text-align:center;padding:25px;background:#102447;color:white}
+@media(max-width:600px){.hero h1{font-size:31px}nav a{margin-left:8px}.hero{padding-top:45px}}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">LocalLift 🚀</div>
+<nav>
+<a href="#services">Services</a>
+<a href="#business">Businesses</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<div class="hero">
+<p>GROW LOCAL. REACH MORE.</p>
+<h1>Promote Your Local Business. Reach More Customers.</h1>
+<p>Helping local shops, restaurants and service providers improve their online visibility with smart marketing and business insights.</p>
+<a class="btn" href="#contact">Promote My Business →</a>
+</div>
+
+<section>
+<h2>Our Impact</h2>
+<p class="sub">A smarter way to grow local businesses</p>
+<div class="stats">
+<div class="stat"><strong>Local</strong>Business Focus</div>
+<div class="stat"><strong>Digital</strong>Marketing Support</div>
+<div class="stat"><strong>Smart</strong>Business Insights</div>
+</div>
+</section>
+
+<section id="services">
+<h2>Our Services</h2>
+<p class="sub">Everything your local business needs to grow</p>
+<div class="grid">
+<div class="card"><div class="emoji">📱</div><h3>Digital Marketing</h3><p>Improve your online presence and connect with more potential customers.</p></div>
+<div class="card"><div class="emoji">📍</div><h3>Local Promotion</h3><p>Help nearby customers discover your shop, restaurant or service.</p></div>
+<div class="card"><div class="emoji">📊</div><h3>Market Analytics</h3><p>Understand customer interest and use insights to plan better promotions.</p></div>
+<div class="card"><div class="emoji">🤝</div><h3>Business Growth</h3><p>Build brand awareness and create stronger customer relationships.</p></div>
+</div>
+</section>
+
+<section id="business">
+<h2>Who We Help</h2>
+<p class="sub">Supporting businesses in your community</p>
+<div class="grid">
+<div class="card"><div class="emoji">🍽️</div><h3>Restaurants & Cafes</h3><p>Promote menus, offers and local dining experiences.</p></div>
+<div class="card"><div class="emoji">🛍️</div><h3>Retail Shops</h3><p>Showcase products and attract shoppers nearby.</p></div>
+<div class="card"><div class="emoji">💈</div><h3>Salons & Services</h3><p>Help people find and contact your business.</p></div>
+</div>
+</section>
+
+<section id="contact">
+<h2>Let's Grow Your Business</h2>
+<p class="sub">Tell us about your business and marketing needs.</p>
+<form id="businessForm">
+<label>Business Name</label>
+<input id="name" required placeholder="Enter business name">
+<label>Contact Number</label>
+<input id="phone" required type="tel" placeholder="Enter phone number">
+<label>Business Type</label>
+<select id="type" required>
+<option value="">Choose business type</option>
+<option>Restaurant / Cafe</option>
+<option>Retail Shop</option>
+<option>Salon / Beauty</option>
+<option>Home Services</option>
+<option>Other</option>
+</select>
+<label>What help do you need?</label>
+<textarea id="message" rows="3" placeholder="Tell us about your business"></textarea>
+<button type="submit">Send Enquiry on WhatsApp</button>
+<p id="notice" style="margin-top:12px;font-size:13px"></p>
+</form>
+</section>
+
+<footer>
+<h3>LocalLift 🚀</h3>
+<p>Local Business Promotion & Market Analytics Portal</p>
+<p>Helping local businesses grow digitally.</p>
+</footer>
+
+<script>
+document.getElementById('businessForm').addEventListener('submit',function(e){
+e.preventDefault();
+const name=document.getElementById('name').value.trim();
+const phone=document.getElementById('phone').value.trim();
+const type=document.getElementById('type').value;
+const message=document.getElementById('message').value.trim();
+const text='Hello LocalLift! I want to promote my business.%0A Business: '+encodeURIComponent(name)+'%0A Contact: '+encodeURIComponent(phone)+'%0A Type: '+encodeURIComponent(type)+'%0A Needs: '+encodeURIComponent(message);
+document.getElementById('notice').textContent='Enquiry prepared. Connect your WhatsApp business number to activate sending.';
+});
+</script>
+</body>
+</html>
